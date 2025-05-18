@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Journal Microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login/",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"demo\", \"password\": \"demo123\" }"
+        }
+      }
+    },
+    {
+      "name": "Feed",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/journals/feed/",
+          "host": [
+            "localhost:8000"
+          ],
+          "path": [
+            "api",
+            "journals",
+            "feed"
+          ]
+        }
+      }
+    }
+  ]
+}
